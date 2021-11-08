@@ -90,7 +90,7 @@ public class EmployeeService {
 
     Employee[] sortByNameAndSalary () {
         for (int i = 0; i < employees.length; i++) {
-            for (int j = i + 1; j < employees.length-1; j++) {
+            for (int j = i + 1; j < employees.length; j++) {
                 Employee currentEmployee;
                 if (employees[i].getName().compareTo(employees[j].getName()) > 0) {
                     currentEmployee = employees[i];
