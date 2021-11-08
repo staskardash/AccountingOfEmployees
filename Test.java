@@ -2,7 +2,7 @@ public class Test {
     public static void main(String[] args) {
 
         EmployeeFactory employeeFactory = new EmployeeFactory();
-        Employee[] randomEmployees = employeeFactory.getRandomEmployees(5);
+        Employee[] randomEmployees = employeeFactory.getRandomEmployees(10);
         EmployeeService employeeService = new EmployeeService(randomEmployees);
 
         System.out.println ("================= Print all Employees ====================");
@@ -25,12 +25,13 @@ public class Test {
         employeeService.sortByName();
         employeeService.printEmployees();
 
-//        System.out.println ("================= Sort Employee by Name and Salary ====================");
-//        employeeService.sortByNameAndSalary();
-//        employeeService.printEmployees();
+        System.out.println ("================= Sort Employee by Name and Salary ====================");
+        employeeService.sortByNameAndSalary();
+        employeeService.printEmployees();
 
         System.out.println ("================= Edit Employee ====================");
-        Employee employeeForEdit = employeeService.edit(employeeFactory.getRandomEmployees(1)[0]);
+        Employee employeeNew = new Employee (2, "Grisha", 23, 1432.32, true, 4, 0.38);
+        Employee employeeForEdit = employeeService.edit(employeeNew);
         System.out.println(employeeForEdit);
         System.out.println ("================= Edited Data Table ====================");
         employeeService.printEmployees();
